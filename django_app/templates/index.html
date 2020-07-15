@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- load Bootstrap -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href="static/css/style.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Index Page</h1>
+        <h3>Create a User</h3>
+        <form action='/users' method='post'>
+            {% csrf_token %}
+            <!-- <div>Name: <input type='text' name='name'></div> -->
+            <!-- Bootstrap Name -->
+            <div class="form-group row">
+                <label for="inputName3" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name='name' class="form-control" id="inputName3" placeholder="">
+                </div>
+            </div>
+
+            <div>
+                Email: <input type='text' name='email'>
+            </div>
+
+            <!-- bootstrap drop down -->
+            <div class="form-row align-items-center">
+                <div class="col-auto my-1">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Dojo Location:</label>
+                    <select class="custom-select mr-sm-2" name='location' id="inlineFormCustomSelect">
+                        <option selected>Choose...</option>
+                        <option value="Dallas">Dallas</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="Austin">Austin</option>
+                    </select>
+                </div>
+
+                <div class="col-auto my-1">
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Language:</label>
+                    <select class="custom-select mr-sm-2" name='language' id="inlineFormCustomSelect">
+                        <option selected>Choose...</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="French">French</option>
+                        <option value="English">English</option>
+                    </select>
+                </div>
+
+
+
+                <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            <h4>Comments (optional)</h4>
+            <textarea name="message" rows="10" cols="30">
+                The cat was playing in the garden.
+                </textarea>
+        </form><!-- Content here -->
+    </div>
+
+
+</body>
+
+</html>
